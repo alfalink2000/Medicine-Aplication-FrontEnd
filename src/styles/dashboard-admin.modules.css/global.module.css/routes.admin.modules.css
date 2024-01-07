@@ -1,0 +1,1738 @@
+/*--------------------------------------------------------------------------------------------------------*/
+/* A partir de aqui son los fondos o bakground de la vista administrativa */
+/*--------------------------------------------------------------------------------------------------------*/
+
+.background-AdminLayout {
+  background-image: url(../../../../public/assets/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+/* A partir de aqui es el menu Abierto */
+/*--------------------------------------------------------------------------------------------------------*/
+
+.sidebar {
+  position: fixed;
+  display: grid;
+  width: 150px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 254, 254, 0.664);
+  box-shadow: 0 0px 15px rgba(2, 4, 24, 0.658);
+  border-right: 2px solid rgba(225, 225, 225, 0.09);
+  backdrop-filter: blur(5px);
+  transition: 0.4s;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.open .logo {
+  width: 100%;
+  height: 120px;
+  padding: 10px 0;
+  margin-top: 30px;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  position: fixed;
+}
+
+.sidebar.open .logo img {
+  width: 50%;
+  transition: 0.4s;
+  margin-top: 0%;
+  padding-right: 20px;
+}
+
+.sidebar.open .logo h3 {
+  transition: 0.4s;
+  color: #645f5f;
+  font-size: 36px;
+  margin-top: 20px;
+  font-variant: small-caps;
+  pointer-events: none;
+  scale: 1;
+  opacity: 1;
+}
+
+.sidebar .nav-title {
+  color: #645f5f;
+  margin: 20px 15px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sidebar nav {
+  padding: 0 45px;
+  position: fixed;
+  margin-top: 230px;
+}
+
+.sidebar ul {
+  padding-left: 0;
+  margin-bottom: 50px;
+}
+
+.sidebar a {
+  text-decoration: none;
+}
+
+.sidebar.open .nav-title {
+  opacity: 1;
+  transition: 0.4s;
+  margin-left: 2vw;
+  transition-delay: 0.2s;
+}
+
+.sidebar nav .nav-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  margin: 8px 0;
+  color: #645f5f;
+  transition: 0.3s;
+}
+
+.sidebar.open nav .nav-item span {
+  font-size: 18px;
+  margin-left: 8px;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.sidebar.open nav .nav-item.active {
+  background-color: #16df69 !important;
+  color: #fff;
+  text-decoration: none;
+  /* padding: 10px 15px; */
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidebar.open nav .nav-item:hover {
+  background: rgba(41, 39, 39, 0.15);
+}
+
+.sidebar.open nav .nav-item:hover img {
+  background: rgba(41, 39, 39, 0);
+}
+
+.sidebar .toggle {
+  cursor: pointer;
+  position: absolute;
+  color: #5f645f;
+  top: 150px;
+  right: -19px;
+  font-size: 38px;
+  line-height: 50%;
+  text-align: center;
+  border-radius: 50%;
+  padding: 2px 0 2px 2px;
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    rgba(255, 254, 254, 0.74) 30%
+  );
+}
+
+.sidebar.open .toggle {
+  transform: translateY(45px);
+}
+
+.sidebar .toggle img {
+  transition: 0.4s linear;
+}
+
+.sidebar.open .toggle img {
+  transform: rotateY(180deg);
+}
+
+.sidebar.open hr {
+  color: rgb(147 140 140);
+  margin: 220px 10px 0 10px;
+  opacity: 1;
+  transition: 0.4s;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+/* A partir de aqui es el menu Serrado */
+/*--------------------------------------------------------------------------------------------------------*/
+
+.sidebar .logo h3 {
+  scale: 0;
+  opacity: 0;
+}
+
+.sidebar hr {
+  opacity: 0;
+}
+
+.sidebar .logo img {
+  width: 90px;
+  margin: 60px 10px 0 30px;
+  transition: 0.3s;
+}
+
+.sidebar nav .nav-item span {
+  opacity: 0;
+}
+
+/* .sidebar nav .nav-item.active img {
+  background-color: var(--verde) !important;
+  padding: 5px 5px;
+  border-radius: 5px;
+  transition: 0.3s;
+} */
+.sidebar nav .nav-item.active img {
+  box-sizing: border-box;
+  background-color: #16df69 !important; /* Cambia el color a un verde agradable */
+  color: #fff;
+  /* padding: 5px 5px; */
+  border-radius: 5px;
+}
+
+/* .sidebar nav .nav-item.active {
+  padding: 0 11px;
+} */
+
+.sidebar nav .nav-item:hover img {
+  background: rgba(41, 39, 39, 0.1);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+/* A partir de aqui es el Contenido de Ayuda */
+/*--------------------------------------------------------------------------------------------------------*/
+.main-content {
+  max-height: 95vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.main-content .row {
+  margin-top: 1vh;
+  margin-right: 3vw;
+}
+
+.main-content .row [class^="col"] {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.info-box {
+  width: 70vw;
+  height: 40vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0px 15px rgba(2, 4, 24, 0.658);
+  display: flex;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.helpMitad {
+  flex: 1;
+}
+
+.imagen_ayuda img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.derecha_ayuda {
+  padding-left: 5px;
+  overflow-y: auto;
+}
+
+.derecha_ayuda::-webkit-scrollbar {
+  width: 0.5em; /* Ancho del scrollbar */
+}
+
+.derecha_ayuda::-webkit-scrollbar-track {
+  background-color: transparent; /* Color de fondo del track (pista) */
+}
+
+.derecha_ayuda::-webkit-scrollbar-thumb {
+  background-color: #8888888c; /* Color del thumb (pulgador) */
+  border-radius: 50px;
+}
+
+.derecha_ayuda::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color del thumb (pulgador) al pasar el cursor por encima */
+}
+
+.info-box button {
+  background-color: var(--verde) !important;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px;
+  box-shadow: 0 8px 32px rgba(2, 4, 24, 0.658);
+}
+
+.info-box button:hover {
+  box-shadow: 0 8px 32px rgba(9, 255, 0, 0.658);
+  transition: 0.3s;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+/* A partir de aqui es el Contenido de Ajustes */
+/*--------------------------------------------------------------------------------------------------------*/
+
+.container-ajuste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.ajuste {
+  flex: 0 0 auto;
+  border-radius: 8px;
+}
+
+.panelArriba-ajuste {
+  padding: 20px 20px 10px 20px;
+  width: 45vw;
+}
+
+.box-ajustes {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0px 15px rgba(2, 4, 24, 0.658);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.text-ajuste {
+  padding-left: 30px;
+  font-variant: small-caps;
+  color: #645f5f;
+  pointer-events: none;
+}
+
+.butonDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6vh;
+}
+
+.container-ajuste button {
+  background-color: var(--verde);
+  padding: 8px;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 0 1px 5px rgba(2, 4, 24, 0.658);
+}
+
+.container-ajuste button:hover {
+  box-shadow: 0 1px 5px rgba(9, 255, 0, 0.658);
+  transition: 0.3s;
+}
+
+.container-ajuste li {
+  margin-bottom: 10px;
+}
+
+.container-ajuste li label {
+  color: #494747;
+  font-variant: small-caps;
+  pointer-events: none;
+}
+
+.box-ajustes input {
+  width: 20vw;
+  border-width: 2px;
+  border: 2px solid var(--verde);
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.box-ajustes input:focus {
+  border-color: rgb(32, 141, 99);
+  transition: 0.4s;
+}
+
+.box-ajustes hr {
+  transition: 0.3s;
+  color: rgb(75, 75, 75);
+}
+
+.EncabezadoAjuste {
+  align-items: center;
+  justify-content: center;
+}
+
+.EncabezadoAjuste img {
+  width: 90px;
+}
+
+.EncabezadoAjuste h2 {
+  padding-top: 2vh;
+}
+
+.ajuste-administrativo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  height: 20px;
+  margin-bottom: 2vh;
+}
+
+.ajuste-administrativo button {
+  color: black;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+}
+
+.ajuste-administrativo button:hover {
+  box-shadow: none;
+}
+
+.ajuste-administrativo span {
+  padding-left: 5px;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+/* A partir de aqui es el Contenido de Administrar */
+/*--------------------------------------------------------------------------------------------------------*/
+
+.container-administrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.row-administrar {
+  width: 100vw;
+}
+
+.caja-administrativa {
+  display: flex;
+  height: 85vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0px 15px rgba(2, 4, 24, 0.658);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.izquierda-administrativa {
+  border: 2px solid;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 9px;
+  border-color: rgb(75, 75, 75);
+}
+
+.izquierda-administrativa h2 {
+  margin: 5px 0 0 20px;
+  font-variant: small-caps;
+  color: #3c3f3c;
+  pointer-events: none;
+}
+
+.minicaja-administrativa hr {
+  color: rgb(75, 75, 75);
+  margin: 0 20px 0 20px;
+}
+
+.izquierda-administrativa::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.info-box-administrativa-Caja {
+  margin-left: 0.3vw;
+  padding: 10px;
+  border: 2px solid;
+  height: 40%;
+  border-color: rgb(75, 75, 75);
+  border-radius: 9px;
+  background-color: #6c757d; /* Cambia el color a un tono de gris más oscuro */
+  color: #fff;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.info-box-administrativa-Caja:hover {
+  background-color: #5a6269; /* Color en hover ligeramente más oscuro */
+  box-shadow: 0 1px 32px rgba(2, 4, 24, 0.658);
+}
+
+.info-box-administrativa-Caja h2 {
+  margin: 5px 0 0 20px;
+  font-variant: small-caps;
+  pointer-events: none;
+}
+
+.info-box-administrativa-Caja hr {
+  color: #fff;
+  pointer-events: none;
+}
+
+.info-box-administrativa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  padding: 10px 10px 10px 10px;
+  font-size: 12.5px;
+}
+
+.actions-box-administrativa {
+  margin-left: 0.3vw;
+  margin-top: 1vh;
+  border: 2px solid;
+  height: 50%;
+  border-color: rgb(75, 75, 75);
+  border-radius: 9px;
+}
+
+.actions-box-administrativa h4 {
+  margin: 5px 0 0 20px;
+  font-variant: small-caps;
+  color: #3c3f3c;
+  pointer-events: none;
+}
+
+.buttons-box-administrativa {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1vw;
+}
+
+.modal-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1vh;
+  padding: 8px 15px;
+  /* width: 40%;  */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.modal-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-button img {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-button span {
+  padding-left: 10px;
+}
+
+.ayuda-administrativa {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 10%;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ayuda-administrativa button {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.ayuda-administrativa span {
+  margin-left: 5px;
+}
+
+.ListVistasPublicasbox {
+  /* background-color: #007bff; */
+  margin: 0 10px 0 10px;
+  height: 83%;
+}
+
+.ListVistasPublicasbox ul {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0%;
+  flex-direction: column;
+}
+.ListVistasPublicasbox ul li {
+  cursor: pointer;
+  width: 100%;
+  padding: 5px;
+  padding-left: 12px;
+  border-radius: 5px;
+}
+
+.ListVistasPublicasbox ul li.selected {
+  background-color: #5a626985;
+  width: 100%;
+  padding: 5px;
+  padding-left: 12px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ListVistasPublicasbox ul li.active {
+  background-color: #007bff;
+  width: 100%;
+  padding: 5px;
+  padding-left: 12px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Animación de aparición del modal */
+.CustomModal__Content--after-open {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Estilo para oscurecer el fondo cuando el modal esté abierto */
+.CustomModal__Content__Overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta el valor alfa aquí */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.CustomModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.CustomModal__Overlay--before-close {
+  opacity: 0;
+}
+/* Estilo para los botones */
+.CustomModal__Content button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilo para el botón Confirmar */
+.CustomModal__Content button.confirmar {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+/* Estilo para el botón Cancelar */
+.CustomModal__Content button.cancelar {
+  background-color: #e21122bb;
+  color: #ffffff;
+  border: none;
+}
+
+/* Estilo para el botón Cancelar al pasar el mouse por encima */
+.CustomModal__Content button.cancelar:hover {
+  background-color: #ca1d1d;
+}
+/* Estilos para la estructura del contenido del nuevo modal */
+.CustomModal__Content .modal-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.CustomModal__Content .form-column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.CustomModal__Content h2 {
+  text-align: center;
+  color: #555;
+  font-size: 24px;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+
+.CustomModal__Content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-register-public {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #0056b3; */
+  height: 400px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.buttons-control {
+  /* background-color: #007bff; */
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  /* padding-right: 30px; */
+}
+
+/* Agrega estilos adicionales según sea necesario */
+
+.inLineInput {
+  /* background-color: #0056b3; */
+  display: flex;
+  justify-content: flex-start;
+  width: 500px;
+}
+.inLineInputImagens {
+  display: flex;
+  justify-content: flex-start;
+  width: 500px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.inLineInputImagens.Serv {
+  display: flex;
+  padding-left: 0px;
+  margin-bottom: 10px;
+}
+
+.inLineInputImagens.Serv input {
+  margin-bottom: 0%;
+  width: 189px;
+}
+
+.form-register-public input,
+.form-register-public select {
+  margin-bottom: 20px;
+  margin-left: 30px;
+  border: 2px solid green;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.imgInput {
+  display: flex;
+  height: 44px;
+  margin-left: 30px;
+}
+
+.imgInput input {
+  padding: 0;
+  margin: 0%;
+  width: 201px;
+}
+
+/* Estilizar el input de tipo file */
+input[type="file"] {
+  display: none;
+}
+
+.inputFalso {
+  border: 2px solid green;
+  border-radius: 4px;
+  width: 201px;
+  height: 48px;
+}
+
+.inputFalso span {
+  font-size: 15px;
+  margin-left: 4px;
+  color: #494747d7;
+
+  white-space: nowrap; /* Evitar el salto de línea del texto */
+  overflow: hidden; /* Ocultar el texto que desborda el contenedor */
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos (...) cuando el texto desborde */
+  max-width: 150px; /* Ajusta este valor según tus necesidades */
+}
+
+/* Estilizar el botón personalizado */
+label.file-input-label::before {
+  content: "Img";
+  display: inline-block;
+  padding: 9px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+  cursor: pointer;
+}
+
+/* Cambiar el estilo cuando se pasa el mouse por encima */
+label.file-input-label:hover::before {
+  background-color: #0056b3;
+}
+
+.ServicioFalso {
+  width: 188px;
+  height: 45px;
+  border: 2px solid green;
+  border-radius: 4px;
+  position: relative;
+  right: 9px;
+}
+.ServicioFalso span {
+  font-size: 15px;
+  margin-left: 4px;
+  color: #494747d7;
+
+  white-space: nowrap; /* Evitar el salto de línea del texto */
+  overflow: hidden; /* Ocultar el texto que desborda el contenedor */
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos (...) cuando el texto desborde */
+  max-width: 150px; /* Ajusta este valor según tus necesidades */
+}
+
+.ServicioFalso label.file-input-label::before {
+  content: "Img";
+  display: inline-block;
+  padding: 8px 9px;
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+  cursor: pointer;
+}
+
+.ServicioFalso label.file-input-label:hover::before {
+  background-color: #0056b3;
+}
+
+.boxPublic {
+  display: flex;
+  flex-direction: column;
+}
+
+.boxPublic-interno {
+  display: flex;
+}
+
+/* Contenido css de las tablas de servicio */
+
+.tableServicesContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  overflow-x: auto;
+  margin: 0 auto;
+  max-height: 47vh;
+  height: 47vh;
+  overflow-y: auto;
+  background-color: #9fa3a033;
+  border-radius: 5px;
+}
+
+.customTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.customTable th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.customTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.header-row {
+  background-color: #f2f2f2;
+  font-size: 16px;
+  color: #000000;
+}
+
+.header-row.EP {
+  font-size: 16px;
+}
+
+.selected {
+  background-color: #aaf;
+}
+
+.controlButtons {
+  display: flex;
+  margin-top: 4vh;
+}
+
+.controlButtons button {
+  width: 5vw;
+}
+
+/* Estilos base para los botones */
+.insertar-servicio,
+.modificar-servicio,
+.eliminar-servicio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px; /* Ajusta este valor según tus preferencias */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  transition: background-image 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.insertar-servicio:active,
+.modificar-servicio:active,
+.eliminar-servicio:active {
+  transform: scale(0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el efecto de hover */
+.insertar-servicio::before,
+.modificar-servicio::before,
+.eliminar-servicio::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.356); /* Color del círculo */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.insertar-servicio:hover::before,
+.modificar-servicio:hover::before,
+.eliminar-servicio:hover::before {
+  width: 200%; /* Ajusta el tamaño del círculo según tus preferencias */
+  height: 200%;
+}
+
+/* Colores de fondo para los botones */
+.insertar-servicio {
+  background-color: #00e626;
+}
+
+.modificar-servicio {
+  background-color: rgb(17, 143, 247);
+}
+
+.eliminar-servicio {
+  background-color: rgba(255, 0, 0, 0.685);
+}
+
+.ButonConfirmRegister {
+  /* background-color: #0056b3; */
+  margin-top: 8%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.confirmarFormRegistro {
+  background-color: #5c6ac4; /* Indigo claro similar al de SweetAlert2 */
+  color: white; /* Color del texto en el botón */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.confirmarFormRegistro:hover {
+  background-color: #4853a6; /* Cambia el color al hacer hover */
+  transform: scale(1.05); /* Efecto de escala suave al hacer hover */
+}
+
+.confirmarFormRegistro:active {
+  transform: scale(0.95); /* Efecto de pulsación al hacer clic */
+}
+
+/* Estilos para el botón de tipo "Cancelar" */
+.cancel-button {
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cancel-button:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.boxModalInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.boxModalInputButton {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1vh;
+}
+
+.custom-input {
+  margin-top: 4vh;
+  border: 2px solid rgb(0, 170, 0); /* Borde verde */
+  width: 100%; /* Ancho del 100% para llenar el espacio disponible */
+  padding: 8px; /* Espaciado interno */
+  border-radius: 5px;
+  height: 350px;
+}
+
+.char-counter {
+  padding-left: 1vw;
+}
+
+.custom-button {
+  background-color: #007bff; /* Fondo azul */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Borde redondeado */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cursor de puntero al pasar el ratón */
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Cambio de color al pasar el ratón */
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+/* A partir de aqui es el Contenido de Dashboard */
+/*--------------------------------------------------------------------------------------------------------*/
+
+.container-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.size {
+  width: 80vw;
+}
+
+.dashboard-box {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.arriba-dashboard {
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info-box-dashboard {
+  height: 100%;
+}
+
+.info-box-interno {
+  height: 90%;
+  margin: 1vw;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0px 15px rgba(2, 4, 24, 0.658);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.Primero {
+  padding: 10px 0px 10px 10px;
+}
+
+.info-box-interno h4 {
+  font-variant: small-caps;
+  font-style: oblique;
+  color: #494747;
+  margin-left: 4px;
+}
+
+.info-box-interno .pastel {
+  width: 300px;
+  height: 180px;
+  margin-left: 10px;
+}
+
+.pastelTexto {
+  font-size: 14px;
+  width: 7vw;
+}
+
+.paisesComunes .pastel {
+  width: 160px;
+  height: 180px;
+  margin-left: 10px;
+}
+
+.pastelbox {
+  display: flex;
+}
+
+.pastelbox ul {
+  display: flex;
+  flex-direction: column;
+  padding: 70px 0px 0 5px;
+  height: 25vh;
+  margin-top: 20px;
+}
+
+.pastelbox ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-variant: small-caps;
+  font-style: oblique;
+  color: #252424;
+}
+.infoPastelbebe {
+  background-color: #0aa3a8;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin-right: 2px;
+  color: #0aa3a8;
+  font-size: 0;
+}
+
+.infoPasteljoven {
+  background-color: #3ae406;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin-right: 2px;
+  color: #3ae406;
+  font-size: 0;
+}
+.infoPasteladulto {
+  background-color: #5733ff;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin-right: 2px;
+  color: #5733ff;
+  font-size: 0;
+}
+.infoPastelanciano {
+  background-color: #8808a1;
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin-right: 2px;
+  color: #8808a1;
+  font-size: 0;
+}
+
+.infoPastelPaisesComunes {
+  width: 15px;
+  height: 15px;
+  margin-top: 4px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin-right: 2px;
+  color: #8808a1;
+  font-size: 0;
+}
+
+.paisesComunes ul {
+  display: flex;
+  flex-direction: column;
+  padding: 35px 0 10px 20px;
+  height: 25vh;
+}
+
+.Estadisicas ul {
+  font-variant: small-caps;
+  font-style: oblique;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-top: 0px;
+  color: #252424c7;
+}
+
+.Estadisicas ul li span {
+  color: #000000;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.abajo-dashboard {
+  height: 50vh;
+}
+
+.abajo-box-dashboard {
+  background-color: rgba(255, 255, 255, 0.637);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0px 15px rgba(2, 4, 24, 0.658);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0 12px 0 12px;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter h3 {
+  font-size: 35px;
+  font-variant: small-caps;
+  font-style: oblique;
+  color: #494747;
+  margin-top: 1vh;
+  margin-left: 1vw;
+  pointer-events: none;
+}
+
+.filter form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(121, 121, 121, 0.8);
+  margin-right: 1vw;
+  margin-top: 1vh;
+  border-radius: 2px;
+}
+
+.filter form input {
+  padding-left: 5px;
+  font-style: oblique;
+  height: 28px;
+}
+
+.filter form:hover {
+  transition: 0.2s;
+  border: 2px solid rgba(39, 39, 39, 0.8);
+}
+
+.filter form img {
+  height: 28px;
+}
+
+.filter form img:hover {
+  background-color: #1dadf0e0;
+  box-shadow: 0 1px 32px rgba(9, 192, 224, 0.795);
+  transition: 0.2s;
+}
+
+.table-box {
+  overflow: auto;
+  height: 40vh;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.header-row {
+  position: sticky;
+  top: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead th {
+  background-color: #cccacad5;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+}
+
+tbody td {
+  border: 1px solid #ddd;
+  padding: 2px;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+/* A partir de aqui es el Contenido de Workbench */
+/*--------------------------------------------------------------------------------------------------------*/
+
+.workbench {
+  height: 100vh;
+}
+
+.workbench-box {
+  height: 100%;
+  width: 90vw;
+  padding: 15px;
+}
+
+.workbench-box-interno {
+  width: 96%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0px 15px rgba(2, 4, 24, 0.658);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.workbench-info-green {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00e626;
+  border-radius: 5px;
+  color: #fff;
+  height: 5%;
+  pointer-events: none;
+}
+
+.form-workbench {
+  display: flex;
+  height: 15%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-workbench h2 {
+  margin-left: 2vw;
+  font-variant: small-caps;
+  font-size: 40px;
+  pointer-events: none;
+}
+
+.form-workbench h2 span {
+  color: blue;
+}
+
+.form-workbench form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(121, 121, 121, 0.8);
+  margin-right: 1vw;
+  border-radius: 2px;
+  width: 205px;
+}
+
+.form-workbench form input {
+  padding-left: 5px;
+  font-style: oblique;
+  /* height: 28px; */
+}
+
+.form-workbench form img {
+  width: 23px;
+  height: 24px;
+}
+
+.form-workbench form:hover {
+  transition: 0.2s;
+  border: 2px solid rgba(39, 39, 39, 0.8);
+}
+
+.form-workbench form img:hover {
+  background-color: #1dadf0e0;
+  box-shadow: 0 1px 32px rgba(9, 192, 224, 0.795);
+  transition: 0.2s;
+}
+
+.table-workbench {
+  overflow: auto;
+  height: 40vh;
+  width: 100%;
+}
+
+.table-workbench tbody tr:hover {
+  background-color: rgba(145, 146, 145, 0.445);
+  cursor: pointer;
+}
+
+.table-workbench tbody td {
+  border: 1px solid #ddd;
+  padding: 2px;
+}
+
+/* Cambia el color del usuario seleccionado como active */
+.selected {
+  background-color: #00e626; /* Cambia este color según tus preferencias */
+  cursor: pointer;
+}
+
+.actions-workbench {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 10vh;
+}
+
+.actions-workbench ul {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  gap: 2vw;
+  margin-left: 1vw;
+}
+
+.actions-workbench ul li button {
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 0px 5px rgba(2, 4, 24, 0.658);
+}
+
+.actions-workbench ul li button:hover {
+  background-color: #1dadf0e0;
+  box-shadow: 0 1px 15px rgba(2, 4, 24, 0.658);
+  transition: 0.2s;
+  color: #fff;
+}
+
+.actions-workbench ul li button label {
+  padding-left: 3px;
+  cursor: pointer;
+}
+
+.form-register {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-register input,
+.form-register select {
+  width: calc(50% - 10px);
+  margin-bottom: 10px;
+  border: 2px solid green;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.form-register select {
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Estilo del contenedor del modal */
+/* Estilo del contenedor del modal */
+.ReactModal__Content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  border: 1px solid rgb(204, 204, 204);
+  overflow: auto;
+  border-radius: 8px;
+  outline: none;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px;
+  animation: 0.3s ease-in-out 0s 1 normal none running fadeIn;
+  max-width: 500px; /* Ajusta este valor según el ancho deseado */
+  width: 90%; /* Fallback para navegadores antiguos sin soporte para max-width */
+  overflow: hidden; /* Evita que se muestre una barra de desplazamiento */
+  max-height: 500px;
+  height: 90%;
+}
+
+/* Animación de aparición del modal */
+.ReactModal__Content--after-open {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+/* Estilo para los botones */
+.ReactModal__Content button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilo para el botón Confirmar */
+.ReactModal__Content button.confirmar {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+/* Estilo para el botón Cancelar */
+.ReactModal__Content button.cancelar {
+  background-color: #e21122bb;
+  color: #ffffff;
+  border: none;
+}
+
+/* Estilo para el botón Cancelar al pasar el mouse por encima */
+.ReactModal__Content button.cancelar:hover {
+  background-color: #ca1d1d;
+}
+
+.pdf-styles {
+  /* font-size: 10px; */
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+/* A partir de aqui es el Contenido de LoginVista */
+/*--------------------------------------------------------------------------------------------------------*/
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.login-box-mayor {
+  width: 400px;
+  height: 360px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.login-box-menor {
+  padding: 10px;
+}
+
+.logotipo-imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* margin-top: 10px; */
+}
+
+.logotipo-imagen img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+
+.logotipo-imagen h2 {
+  /* margin-top: 1vh; */
+  font-family: sans-serif;
+  color: #004e2ab6;
+  font-variant: small-caps;
+  pointer-events: none;
+}
+
+.login-box-mayor hr {
+  color: #3c3f3c;
+  margin-top: 0;
+}
+
+.box-formLogin {
+  display: flex;
+  flex-direction: column;
+}
+
+.box-inputs-form {
+  height: 25vh;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.box-inputs-form ul {
+  display: flex;
+  flex-direction: column;
+  /* width: 28vw; */
+  padding-left: 25px;
+}
+
+.box-inputs-form li {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.box-inputs-form li img {
+  width: 20px;
+}
+
+.box-inputs-form li label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding-left: 2px;
+  color: #3c3f3c;
+}
+
+.box-inputs-form li label.focused {
+  /* Estilos para cuando el input está enfocado */
+  /* Por ejemplo, puedes agregar una animación de color o tamaño */
+  color: #057217;
+  transform: scale(1.1);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.box-inputs-form input {
+  border: 1px solid #004e2ab6;
+  /* height: 5vh; */
+  /* width: 25vw; */
+  height: 35px;
+  width: 340px;
+  border-radius: 50px;
+  padding-left: 10px;
+}
+
+.box-inputs-form input:focus {
+  border: 2px solid #014126a6;
+}
+
+.box-inputs-form li span {
+  position: absolute;
+  right: 40px;
+  font-size: 1.2em;
+  line-height: 57px;
+  margin-top: 24px;
+}
+
+.box-button-submit {
+  display: flex;
+  justify-content: flex-end;
+  height: 6vh;
+  padding: 0 0px 0 10px;
+  /* background-color: #3c3f3c; */
+}
+
+.olvide {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.olvide-button {
+  text-decoration: none;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #ffffff00;
+}
+
+.olvide-button:hover {
+  color: blue;
+}
+
+.contact-mail {
+  width: 25px;
+}
+
+.box-button-submit .submit-button {
+  padding: 8px;
+  border-radius: 5px;
+  color: #fff;
+  background-image: linear-gradient(rgb(104, 223, 104), rgb(17, 143, 247));
+  border: none;
+  cursor: pointer;
+  transition: background-image 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.box-button-submit .submit-button:hover {
+  background-image: linear-gradient(rgb(17, 143, 247), rgb(104, 223, 104));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.box-button-submit .submit-button:active {
+  transform: scale(0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
